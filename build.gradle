@@ -1,0 +1,37 @@
+version "0.0.1"
+
+allprojects {
+  repositories {
+    jcenter()
+    mavenCentral()
+  }
+}
+
+subprojects {
+  apply plugin: "java"
+
+  test {
+    useJUnitPlatform()
+
+    testLogging {
+      events = ["passed", "skipped", "failed"]
+
+      // Allow for tests
+      showStandardStreams = true
+
+      // Always show test output even if nothing changed
+      outputs.upToDateWhen {
+        false
+      }
+    }
+  }
+
+  dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.5.2"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.5.2"
+  }
+}
+
+configure(subprojects - project(":util")) {
+  apply plugin: "application"
+}
