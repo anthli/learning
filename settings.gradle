@@ -1,1 +1,10 @@
 rootProject.name = "learning"
+
+// Algorithms
+
+include "mergesort"
+project(":mergesort").projectDir = file("algorithms/mergesort")
+
+// Utilities
+
+include "util"
