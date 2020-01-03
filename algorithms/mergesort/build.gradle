@@ -1,5 +1,1 @@
 mainClassName = "com.anthli.mergesort.Main"
-
-dependencies {
-  compile project(":util")
-}
