@@ -5,19 +5,33 @@ import java.util.Collections;
 import java.util.List;
 
 public class Utils {
-  public static void printArray(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-      if (i < arr.length - 1) {
-        System.out.print(arr[i] + ", ");
+  /**
+   * Prints the array delimited by commas.
+   *
+   * @param array
+   *        The array to print.
+   */
+  public static void printArray(int[] array) {
+    for (int i = 0; i < array.length; i++) {
+      if (i < array.length - 1) {
+        System.out.print(array[i] + ", ");
       }
       else {
-        System.out.print(arr[i]);
+        System.out.print(array[i]);
       }
     }
 
     System.out.print("\n");
   }
 
+  /**
+   * Generates an array of integers of the given size in random order. The first
+   * element starts at 0.
+   *
+   * @param size
+   *        The size of the random array.
+   * @return An array of integers in random order.
+   */
   public static int[] generateRandomArray(int size) {
     List<Integer> list = new ArrayList<>();
     for (int i = 0; i < size; i++) {

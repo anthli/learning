@@ -1,11 +1,27 @@
 package com.anthli.mergesort;
 
-public class Mergesort {
-  private void merge(int[] arr, int left, int mid, int right) {
-    // Create a copy of the original arr
-    int[] copy = new int[arr.length];
+/**
+ * An implementation of the merge sort algorithm.
+ */
+public class MergeSort {
+  /**
+   * Divides the given array in two partitions: one from left to mid, another
+   * from mid + 1 to right.
+   *
+   * @param array
+   *        The array to sort.
+   * @param left
+   *        The starting index for partitioning the array.
+   * @param mid
+   *        The middle index for partitioning the array.
+   * @param right
+   *        The ending index for partitioning the array.
+   */
+  private void mergeSort(int[] array, int left, int mid, int right) {
+    // Create a copy of the original array
+    int[] copy = new int[array.length];
 
-    System.arraycopy(arr, 0, copy, 0, arr.length);
+    System.arraycopy(array, 0, copy, 0, array.length);
 
     // Starting position for left sub-array
     int i = left;
@@ -14,45 +30,55 @@ public class Mergesort {
     // Position of the to-be sorted array
     int k = left;
 
-    // Sort both left and right sub-arrays
-    // Either i or j will hit its upper bound, but not both
-    // i = mid == left sub-array is sorted
-    // j = right == right sub-array is sorted
+    // Sort both left and right sub-arrays. Either i or j will hit its upper
+    // bound, but not both. If i == mid, then the left sub-array is sorted.
+    // Otherwise if j == right, then the right sub-array will be sorted
     while (i <= mid && j <= right) {
       if (copy[i] < copy[j]) {
-        arr[k] = copy[i];
+        array[k] = copy[i];
         i++;
       }
       else {
-        arr[k] = copy[j];
+        array[k] = copy[j];
         j++;
       }
 
       k++;
     }
 
-    // Copy the remaining elements in the left sub-array into arr
+    // Copy the remaining elements in the left sub-array into array
     while (i <= mid) {
-      arr[k] = copy[i];
+      array[k] = copy[i];
       i++;
       k++;
     }
 
-    // Copy the remaining elements in the right sub-array into arr
+    // Copy the remaining elements in the right sub-array into array
     while (j <= right) {
-      arr[k] = copy[j];
+      array[k] = copy[j];
       j++;
       k++;
     }
   }
 
-  public void mergesort(int[] arr, int left, int right) {
+  /**
+   * Runs the merge sort algorithm on the given array with the starting and
+   * ending indices of the array.
+   *
+   * @param array
+   *        The array to sort.
+   * @param left
+   *        The starting index for partitioning the array.
+   * @param right
+   *        The ending index for partitioning the array.
+   */
+  public void mergeSort(int[] array, int left, int right) {
     if (left < right) {
       int middle = (left + right) / 2;
 
-      mergesort(arr, left, middle);
-      mergesort(arr, middle + 1, right);
-      merge(arr, left, middle, right);
+      mergeSort(array, left, middle);
+      mergeSort(array, middle + 1, right);
+      mergeSort(array, left, middle, right);
     }
   }
 }
