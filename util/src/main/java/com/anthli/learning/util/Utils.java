@@ -1,4 +1,10 @@
-package com.anthli.util;
+/*
+ * Copyright (c) 2020 Anthony Li
+ *
+ * This source code is licensed under the MIT license (see LICENSE for details)
+ */
+
+package com.anthli.learning.util;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +15,7 @@ public class Utils {
    * Prints the array delimited by commas.
    *
    * @param array
-   *        The array to print.
+   *   The array to print.
    */
   public static void printArray(int[] array) {
     for (int i = 0; i < array.length; i++) {
@@ -26,11 +32,12 @@ public class Utils {
 
   /**
    * Generates an array of integers of the given size in random order. The first
-   * element starts at 0.
+   * element starts at 1.
    *
    * @param size
-   *        The size of the random array.
-   * @return An array of integers in random order.
+   *   The size of the random array.
+   * @return
+   *   An array of integers in random order.
    */
   public static int[] generateRandomArray(int size) {
     List<Integer> list = new ArrayList<>();

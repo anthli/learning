@@ -1,4 +1,10 @@
-package com.anthli.mergesort;
+/*
+ * Copyright (c) 2020 Anthony Li
+ *
+ * This source code is licensed under the MIT license (see LICENSE for details)
+ */
+
+package com.anthli.learning.mergesort;
 
 /**
  * An implementation of the merge sort algorithm.

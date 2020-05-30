@@ -1,6 +1,12 @@
-package com.anthli.mergesort;
+/*
+ * Copyright (c) 2020 Anthony Li
+ *
+ * This source code is licensed under the MIT license (see LICENSE for details)
+ */
 
-import com.anthli.util.Utils;
+package com.anthli.learning.mergesort;
+
+import com.anthli.learning.util.Utils;
 
 public class Main {
   private static void runMergeSort() {
